@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "updated_at": "2025-12-11T00:00:00Z",
+  "workflow": {
+    "nodes": [
+      {
+        "id": "user_input",
+        "type": "input",
+        "label": "User Message",
+        "nodeCategory": "input",
+        "description": "User enters a message in the chat interface",
+        "position": { "x": 100, "y": 200 }
+      },
+      {
+        "id": "chat_agent",
+        "type": "agent",
+        "label": "Chat Agent",
+        "nodeCategory": "agent",
+        "description": "Engages in natural conversation with memory",
+        "position": { "x": 500, "y": 200 }
+      },
+      {
+        "id": "response_output",
+        "type": "end",
+        "label": "Chat Response",
+        "nodeCategory": "end",
+        "description": "Agent response displayed in chat window",
+        "position": { "x": 900, "y": 200 }
+      }
+    ],
+    "edges": [
+      { "source": "user_input", "target": "chat_agent" },
+      { "source": "chat_agent", "target": "response_output" }
+    ]
+  },
+  "agents": [
+    {
+      "agent_id": "693adf5b11f992bd361d0fa2",
+      "node_id": "chat_agent",
+      "name": "Chat Agent",
+      "description": "Engages in natural conversation with users, answers questions, provides helpful information, and maintains context across the conversation using memory",
+      "agent_role": "Conversational AI Assistant",
+      "agent_goal": "Provide helpful, engaging, and contextual responses while maintaining conversation history",
+      "provider_id": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "features": ["MEMORY"],
+      "has_knowledge_base": false,
+      "rag_id": null,
+      "rag_name": null,
+      "position": { "x": 500, "y": 200 },
+      "created_at": "2025-12-11T00:00:00Z"
+    }
+  ],
+  "knowledge_bases": []
+}
